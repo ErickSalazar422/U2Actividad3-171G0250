@@ -1,0 +1,26 @@
+﻿@model IEnumerable<U2Actividad3_171G0250.Models.Pelicula>
+@{
+    Layout = "_Layout";
+}
+<div id="pelis">
+    @foreach (var peli in Model)
+    {
+
+        <div>
+            <a class="imgPelicula" href="/pelicula/@peli.Nombre">
+                <img src="~/images/portadas/@(peli.Id.ToString())_p.jpg">
+            </a>
+            <div class="nombrePelicula">
+                <p>@peli.Nombre</p>
+            </div>
+        </div>
+
+
+
+
+    }
+</div>
+
+
+   
+

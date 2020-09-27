@@ -1,0 +1,52 @@
+﻿@model IEnumerable<U2Actividad3_171G0250.Models.ViewModels.DatosCortoViewModel>
+@{
+    Layout = "_Layout";
+}
+
+
+
+    @foreach (var Categ in Model   )
+    {
+<div id="principalPeliculas">
+
+    <div id="pelis">
+        <h1>@Categ.Nombre</h1>
+
+
+        @foreach (var cat in Categ.Cortometraje)
+        {
+            <div>
+                <a class="imgPelicula" href="/Corto/@cat.Nombre">
+                    <img src="~/images/portadas/@(cat.Id)_pc.jpg" >
+                </a>
+                <div class="nombrePelicula">
+                    <p>@cat.Nombre</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+    }
+
+
+
+
+
+    @*<div cla id="pelis">
+        <div></div>
+        <div>
+            <a class="imgPelicula" href="Pequeño.html">
+                <img src="~/images/portadas/@(cor.idCort)_pc.jpg">
+            </a>
+            <div class="nombreCorto">
+                <p>@cor.Nombre</p>
+            </div>
+        </div>
+        </div>*@
+
+
+</div>
+
+

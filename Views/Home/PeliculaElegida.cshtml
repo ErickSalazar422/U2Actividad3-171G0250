@@ -1,0 +1,66 @@
+﻿@model U2Actividad3_171G0250.Models.datospeliViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div id="principalVer">
+
+    <div class="container">
+        <img class="image1" src="~/images/banners/@(Model.idp.ToString())_b.jpg">
+        <div class="overlay">
+            <img class="image2" src="~/images/banners/@(Model.idp.ToString())_b.png">
+        </div>
+
+    </div>
+
+    <div class="datosPelicula">
+        <h1>@Model.Nombre</h1>
+        <h2>
+            @(Model.NombreOr) • @(Model.Año.Value.Year)</h1>
+            <p>
+                @Html.Raw(@Model.descripcion)
+
+            </p>
+
+
+
+
+
+
+        <div class="Personajes">
+            <h2>Personajes</h2>
+            @for (int i = 0; i < Model.Apariciones.Length; i++)
+            {
+                <div>
+
+                    @foreach (var idper in Model.Apariciones[i])
+                    {
+
+                        <a>
+                            <img src="~/images/personajes/@(idper.IdPersonajeNavigation.Id.ToString()).jpg">
+                        </a>
+                        
+                        <span>@idper.IdPersonajeNavigation.Nombre</span>
+
+
+                    }
+
+
+                </div>
+
+
+
+            }
+
+        </div>
+            </div>
+            
+          
+    
+           
+            
+           
+
+
+
